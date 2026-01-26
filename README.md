@@ -5,8 +5,8 @@ lake exe cache get
 lake exe lacnotes
 and then 
 cd _out/html-multi
-python3 -m http.server 8000
-open http://localhost:8000
+python3 -m http.server 8001
+open http://localhost:8001
 
 if anchors are stuck:
 rm -rf .lake/build/highlighted

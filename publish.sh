@@ -4,7 +4,7 @@ set -euo pipefail
 # --- CONFIG (edit if you ever need to) ---
 SRC_DIR="${1:-_out/html-multi}"             # local build output (arg1 overrides)
 DEST_HOST="${DEST_HOST:-psztxa@active-websites.cs.nott.ac.uk}"
-DEST_DIR="${DEST_DIR:-public_html/comp2065.25-26.ifrnotes}"
+DEST_DIR="${DEST_DIR:-public_html/comp2012.25-26.lacnotes}"
 
 # Set DRY_RUN=1 to preview changes without uploading.
 DRY_FLAG=""

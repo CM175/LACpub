@@ -3,6 +3,7 @@ import Text.Meta
 
 -- chapters
 import Text.Intro
+import Text.Lang
 
 open Text
 --import Content.Meta.Lean
@@ -24,3 +25,4 @@ authors := ["Thorsten Altenkirch"]
 
 ```
 {include 1 Intro}
+{include 1 Lang}
