@@ -3,6 +3,8 @@ import Mathlib.Tactic.DeriveFintype
 import Mathlib.Data.Nat.ModEq
 -- ·  ⋅
 set_option linter.dupNamespace false
+set_option linter.unusedSectionVars false
+set_option linter.unnecessarySimpa false
 
 namespace Lang
 
