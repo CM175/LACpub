@@ -1,12 +1,16 @@
-These are the lecture notes for COMP2012 (IFR) using lean4 and verso.
+# LAC – Lean lecture material (COMP2012)
 
-Run
-lake exe cache get
-lake exe lacnotes
-and then 
-cd _out/html-multi
-python3 -m http.server 8001
-open http://localhost:8001
+This repository contains the lecture and exercise material for COMP2012 (Languages and Computation),
+using Lean 4 with mathlib.
 
-if anchors are stuck:
-rm -rf .lake/build/highlighted
+The material is organised as a Lake project and updated regularly during the semester.
+
+## Repository structure
+
+Lectures/    lecture files used in class  
+Exercises/   exercise sheets  
+Proofs/      Lean code from the lecture notes
+
+All Lean imports start with `LAC`, for example:
+
+import LAC.Proofs.Lang

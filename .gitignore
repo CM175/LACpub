@@ -14,3 +14,12 @@ lean_packages/
 *.swo
 *.log
 # docs/
+# Private teaching material (never public)
+Text/
+Solutions/
+Images/
+Experiments/
+
+# Private Lean entry points / executables
+Main.lean
+LACNotes.lean
