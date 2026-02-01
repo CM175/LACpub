@@ -5,7 +5,7 @@ L02 : Languages
 What is a languages? A language is a set of words
 What is a word ? A word is a sequence of symbols
 What is a symbol? An element of an alphabet
-What is an alphabet? A finite type with a decidable equality.import Aesop.Builder.NormSimp
+What is an alphabet? A finite type with a decidable equality.
 
 -/
 
@@ -125,7 +125,7 @@ abbrev L1' : Lang SigmaABC
 -- Finset = List but identify lists with the same lements
 
 #eval ([0,1,1] = [1,0])
--- example :  ({1,0,0} = {0,1}) := by simp
+#eval ({1,2,2,3} = ({3,2,1} : Finset ℕ)) -- fixed
 -- coercion Finset → Set
 
 end Examples
