@@ -24,7 +24,7 @@ namespace ex_div3
 
 /-
 Define a DFA that recognizes all binary numbers
-in little endian (most significant bit at the end)
+in big endian (most significant bit at the end)
 that are divisible by 3:
 -/
 abbrev div3 : Lang SigmaBin
@@ -33,16 +33,23 @@ abbrev div3 : Lang SigmaBin
 inductive Q_div3 : Type
 -- *Insert* your states here
 -- e.g. | q0 | q1 | ...
+| q0 | q1 | q2
 deriving Fintype, DecidableEq
 open Q_div3
 
 abbrev A_div3 : DFA SigmaBin :=
   -- *Insert* your definition of the automaton here.
-  {   Q := sorry
-      s := sorry
-      F := sorry
-      δ := sorry
-  }
+  {   Q := Q_div3
+      s := q0
+      F := {q0}
+      δ := λ
+    | q0, 0 => q0
+    | q0, 1 => q1
+    | q1, 0 => q2
+    | q1, 1 => q0
+    | q2, 0 => q1
+    | q2, 1 => q2
+}
 
 -- You don't have to prove this
 lemma div3_lem : div3 = L A_div3 := by sorry
@@ -68,15 +75,22 @@ description on Moodle:
 inductive Q3_6_nfa : Type
 -- *Insert* your states here
 -- e.g. | q0 | q1 | ...
+| q0 | q1 | q2 | q3 | q4
 deriving Fintype, DecidableEq
 open Q3_6_nfa
 
 abbrev A3_6_nfa : NFA SigmaBin :=
   -- *insert* your definition of the automaton here.
-  {   Q := sorry
-      S := sorry
-      F := sorry
-      δ := sorry
+  {   Q := Q3_6_nfa
+      S := {q0}
+      F := {q4}
+      δ := λ
+    | q0, 0 => {q2}
+    | q0, 1 => {q1, q3}
+    | q1, 1 => {q0}
+    | q2, 0 => {q0}
+    | q3, 0 => {q4}
+    | _, _ => ∅
   }
 
 -- test cases
@@ -92,15 +106,26 @@ this into a DFA recginzing the same language.
 inductive Q3_6_dfa : Type
 -- *Insert* your states here
 -- e.g. | q0 | q1 | ...
+| A | B | C | D | E
 deriving Fintype, DecidableEq
 open Q3_6_dfa
 
 abbrev A3_6_dfa : DFA SigmaBin :=
   -- *insert* your definition of the automaton here.
-  {   Q := sorry
-      s := sorry
-      F := sorry
-      δ := sorry
+  {   Q := Q3_6_dfa
+      S := A
+      F := {E}
+      δ := λ
+      | A, 0 => B
+      | A, 1 => C
+      | B, 0 => A
+      | B, 1 => D
+      | C, 0 => E
+      | C, 1 => A
+      | D, 0 => D
+      | D, 1 => D
+      | E, 0 => D
+      | E, 1 => D
   }
 
 -- test cases
